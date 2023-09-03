@@ -2,12 +2,25 @@ const dice = document.querySelector(".dice");
 const toggleBtn = document.querySelector(".toggle-btn");
 let adviceId = document.getElementById("id");
 let adviceText = document.getElementById("text");
+
 document.addEventListener("DOMContentLoaded", () => {
   fetchData();
 });
 
+localStorage.setItem("theme", localStorage.getItem("theme") || "light");
+
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("body-dark");
+}
+
 toggleBtn.addEventListener("click", () => {
   document.body.classList.toggle("body-dark");
+
+  if (document.body.classList.contains("body-dark")) {
+    localStorage.setItem("theme", "dark");
+  } else {
+    localStorage.setItem("theme", "light");
+  }
 });
 
 dice.addEventListener("click", () => {
