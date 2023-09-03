@@ -21,7 +21,10 @@ body {
   text-align: center;
   position: relative;
   color: hsl(193, 38%, 86%);
-  margin: 20px;
+}
+
+.splitter-mobile {
+  display: none;
 }
 
 .advice-number {
@@ -54,4 +57,25 @@ body {
 
 .rotate {
   transform: rotate(90deg);
+}
+
+@media only screen and (max-width: 600px) {
+  .advice-card {
+    /* background-color: red; */
+    margin: 0 20px;
+    width: fit-content;
+  }
+
+  #text {
+    font-size: 20px;
+  }
+
+  .splitter {
+    display: none;
+  }
+
+  .splitter-mobile {
+    display: block;
+    margin: 70px 0;
+  }
 }
