@@ -1,10 +1,14 @@
+const dice = document.querySelector(".dice");
+const toggleBtn = document.querySelector(".toggle-btn");
+let adviceId = document.getElementById("id");
+let adviceText = document.getElementById("text");
 document.addEventListener("DOMContentLoaded", () => {
   fetchData();
 });
 
-const dice = document.querySelector(".dice");
-let adviceId = document.getElementById("id");
-let adviceText = document.getElementById("text");
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("body-dark");
+});
 
 dice.addEventListener("click", () => {
   dice.classList.toggle("rotate");

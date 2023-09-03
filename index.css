@@ -1,26 +1,63 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap");
 
-body {
+:root {
+  --bd-body: hsl(218, 23%, 16%);
+  --card-bg: hsl(217, 19%, 24%);
+  --advice-number-color: hsl(150, 100%, 66%);
+  --dice-bg: hsl(150, 100%, 66%);
+  --main-text-color: hsl(193, 38%, 86%);
+  --btn-color: hsl(0, 0%, 100%);
+}
+
+.body {
   margin: 0;
   box-sizing: border-box;
   font-family: "Manrope", sans-serif;
   display: grid;
   place-items: center;
   height: 100vh;
-  background-color: hsl(218, 23%, 16%);
+  background-color: var(--bd-body);
+}
+
+.body-dark {
+  --bd-body: #ffffff;
+  --card-bg: hsl(219, 79%, 43%);
+  --advice-number-color: hsl(213, 99%, 71%);
+  --dice-bg: hsl(213, 100%, 54%);
+  --main-text-color: hsl(0, 0%, 100%);
+  --btn-color: hsl(219, 79%, 43%);
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 15px 30px;
+  font-family: sans-serif;
+  border-radius: 10px;
+  border: 1px solid var(--btn-color);
+  font-size: 18px;
+  color: var(--btn-color);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.toggle-btn:active {
+  opacity: 0.6;
+  transform: scale(0.98);
 }
 
 .advice-card {
   width: 100%;
   max-width: 500px;
-  background-color: hsl(217, 19%, 24%);
+  background-color: var(--card-bg);
   border-radius: 20px;
   padding: 10px 20px;
   display: grid;
   place-items: center;
   text-align: center;
   position: relative;
-  color: hsl(193, 38%, 86%);
+  color: var(--main-text-color);
 }
 
 .splitter-mobile {
@@ -31,7 +68,7 @@ body {
   margin-top: 40px;
   font-weight: bold;
   letter-spacing: 3px;
-  color: hsl(150, 100%, 66%);
+  color: var(--advice-number-color);
 }
 
 .splitter {
@@ -41,7 +78,7 @@ body {
 .dice {
   width: 80px;
   height: 80px;
-  background-color: hsl(150, 100%, 66%);
+  background-color: var(--dice-bg);
   display: grid;
   place-items: center;
   border-radius: 50%;
@@ -52,7 +89,7 @@ body {
 }
 
 .dice:hover {
-  box-shadow: 0 0 30px 9px hsl(150, 100%, 66%);
+  box-shadow: 0 0 30px 9px var(--dice-bg);
 }
 
 .rotate {
@@ -61,7 +98,6 @@ body {
 
 @media only screen and (max-width: 600px) {
   .advice-card {
-    /* background-color: red; */
     margin: 0 20px;
     width: fit-content;
   }
